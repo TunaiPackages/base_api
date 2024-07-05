@@ -1,13 +1,13 @@
 import 'package:http/http.dart';
 
 class BaseApiResponse {
-  final StreamedResponse response;
+  final StreamedResponse streamedResponse;
   final dynamic data;
 
-  int get statusCode => response.statusCode;
+  int get statusCode => streamedResponse.statusCode;
 
   const BaseApiResponse({
-    required this.response,
+    required this.streamedResponse,
     required this.data,
   });
 }

@@ -25,7 +25,7 @@ abstract class BaseApi {
     final response = await httpRequest.send();
     final data = json.decode(await response.stream.bytesToString());
     return BaseApiResponse(
-      response: response,
+      streamedResponse: response,
       data: data,
     );
   }
