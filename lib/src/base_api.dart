@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:base_api/src/base_api_response.dart';
-import 'package:base_api/src/http_method.dart';
+import 'package:base_api/src/model/base_api_response.dart';
+import 'package:base_api/src/enum/http_method.dart';
 import 'package:http/http.dart' as http;
 
 abstract class BaseApi {
