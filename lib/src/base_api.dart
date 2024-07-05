@@ -15,11 +15,7 @@ abstract class BaseApi {
     required this.headers,
   });
 
-  http.Request get httpRequest {
-    final request = http.Request(method.toString(), uri);
-    request.headers.addAll(headers);
-    return request;
-  }
+  http.BaseRequest get httpRequest;
 
   Future<BaseApiResponse> send() async {
     final response = await httpRequest.send();
