@@ -19,7 +19,15 @@ abstract class BaseApi {
 
   Future<BaseApiResponse> send() async {
     final response = await httpRequest.send();
-    final data = json.decode(await response.stream.bytesToString());
+    final responseData = await response.stream.bytesToString();
+    dynamic data;
+
+    try {
+      data = json.decode(responseData);
+    } catch (e) {
+      data = responseData;
+    }
+
     return BaseApiResponse(
       streamedResponse: response,
       data: data,
